@@ -1,0 +1,22 @@
+package templates
+
+import (
+	"fmt"
+)
+
+templ CounterPage(counter int) {
+	@Scaffold(counterPageContent(counter))
+}
+
+templ counterPageContent(counter int) {
+	<div className="flex mx-auto max-w-44">
+		<h1 id="counter" class="text-2xl font-bold">
+			{ fmt.Sprintf("%d", counter) }
+		</h1>
+		<button
+			hx-post="/increment"
+			hx-target="#counter"
+			class="mx-auto text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+		>Increment asdf</button>
+	</div>
+}

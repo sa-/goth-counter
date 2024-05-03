@@ -1,0 +1,24 @@
+package templates
+
+templ header() {
+	<head>
+		<title>Counter</title>
+		<script src="/assets/js/htmx.min.js"></script>
+		<script src="/assets/js/flowbite.2.3.0.min.js"></script>
+		<link href="/assets/css/flowbite.2.3.0.min.css" rel="stylesheet"/>
+		<link href="/assets/css/generated-tailwind.css" rel="stylesheet"/>
+	</head>
+}
+
+templ Scaffold(content templ.Component) {
+	<!DOCTYPE html>
+	<html>
+		@header()
+		<body>
+			@Sidebar()
+			<div class="p-4 sm:ml-64">
+				@content
+			</div>
+		</body>
+	</html>
+}

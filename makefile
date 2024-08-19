@@ -1,8 +1,7 @@
 .PHONY: dev
 dev:
 	@tailwindcss -o assets/css/generated-tailwind.css
-	@templ generate
-	@go run *.go
+	@templ generate --watch --proxy="http://localhost:42069" --cmd="go run ."
 
 .PHONY: build
 build:
